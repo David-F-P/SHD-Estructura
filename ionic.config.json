@@ -1,0 +1,7 @@
+{
+  "name": "SHD",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
