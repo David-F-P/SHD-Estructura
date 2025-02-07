@@ -5,9 +5,9 @@
 </ion-header>
 
 <ion-content>
-  <ion-button (click)="ordenar()">Ordenar por Anio</ion-button>
-  <ion-input placeholder="Buscar por diseñador" #disenador></ion-input>
-  <ion-button (click)="buscar">Buscar</ion-button>
+  <ion-button (click)="ordenar()">Ordenar por Año</ion-button>
+  <ion-input placeholder="Buscar por diseñador" [(ngModel)]="disenador"></ion-input>
+  <ion-button (click)="buscar()">Buscar</ion-button>
   <ion-list>
     <ion-item *ngFor="let prenda of inventario">
       <ion-label>

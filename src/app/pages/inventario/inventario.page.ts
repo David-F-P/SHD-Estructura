@@ -7,10 +7,12 @@ import { Prenda } from 'src/app/models/prenda';
   templateUrl: './inventario.page.html',
   styleUrls: ['./inventario.page.scss'],
   standalone: false,
+
 })
 export class InventarioPage {
   inventario: Prenda[] = [];
   valorTotal: number = 0;
+  disenador: string = '';
 
   constructor(private inventarioService: InventarioService) {}
 
@@ -23,7 +25,7 @@ export class InventarioPage {
     this.inventario = this.inventarioService.ordenarPorAnio();
   }
 
-  buscar(disenador: string) {
-    this.inventario = this.inventarioService.buscarPorDisenador(disenador);
+  buscar() {
+    this.inventario = this.inventarioService.buscarPorDisenador(this.disenador);
   }
 }
