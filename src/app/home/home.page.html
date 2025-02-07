@@ -1,20 +1,33 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">Agregar Nueva Prenda</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Registro de Prenda</ion-card-title>
+    </ion-card-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-card-content>
+      <ion-item>
+        <ion-input label="Nombre" placeholder="Ej: Vestido de Gala" [(ngModel)]="nuevaPrenda.nombre" clearInput></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Diseñador" placeholder="Ej: Chanel" [(ngModel)]="nuevaPrenda.disenador" clearInput></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Año de Colección" type="number" placeholder="Ej: 2024" [(ngModel)]="nuevaPrenda.anioColeccion"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Precio" type="number" placeholder="Ej: 1500" [(ngModel)]="nuevaPrenda.precio"></ion-input>
+      </ion-item>
+
+      <ion-button expand="full" color="success" (click)="agregarPrenda()">Agregar Prenda</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
