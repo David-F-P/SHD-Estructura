@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 import { InventarioService } from 'src/app/services/inventario.service';
 import { Prenda } from 'src/app/models/prenda';
-import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-inventario',
   templateUrl: './inventario.page.html',
   styleUrls: ['./inventario.page.scss'],
-  standalone: false,
 })
 export class InventarioPage {
   inventario: Prenda[] = [];
@@ -30,9 +29,9 @@ export class InventarioPage {
   }
 
   /**
-   * Redirige a la página de Home.
+   * Redirige a la página de Registro
    */
-  irAHome() {
-    this.navCtrl.navigateBack('/home');
+  irARegistro() {
+    this.navCtrl.navigateForward('/registro');
   }
 }

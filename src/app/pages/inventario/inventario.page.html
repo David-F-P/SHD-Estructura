@@ -2,8 +2,8 @@
   <ion-toolbar color="primary">
     <ion-title class="ion-text-center">Inventario de Prendas</ion-title>
     <ion-buttons slot="end">
-      <ion-button color="light" (click)="irAHome()">
-        <ion-icon slot="icon-only" name="home"></ion-icon>
+      <ion-button color="light" (click)="irARegistro()">
+        <ion-icon slot="icon-only" name="add-circle"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -46,8 +46,8 @@
       <ion-title class="ion-text-center">Valor total del inventario: ${{ valorTotal }}</ion-title>
     </ion-toolbar>
     <ion-toolbar>
-      <ion-button expand="full" color="secondary" (click)="irAHome()">
-        <ion-icon name="home" slot="start"></ion-icon> Ir a Home
+      <ion-button expand="full" color="secondary" (click)="irARegistro()">
+        <ion-icon name="add-circle" slot="start"></ion-icon> Ir a Registro
       </ion-button>
     </ion-toolbar>
   </ion-footer>
