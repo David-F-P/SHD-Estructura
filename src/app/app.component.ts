@@ -9,6 +9,6 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   constructor(private router: Router) {
-    this.router.navigateByUrl('/inventario');
+    this.router.navigateByUrl('/registro');
   }
 }

@@ -7,6 +7,7 @@ import { Prenda } from 'src/app/models/prenda';
   selector: 'app-inventario',
   templateUrl: './inventario.page.html',
   styleUrls: ['./inventario.page.scss'],
+  standalone: false,
 })
 export class InventarioPage {
   inventario: Prenda[] = [];
