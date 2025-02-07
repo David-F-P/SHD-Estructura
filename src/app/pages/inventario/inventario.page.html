@@ -1,24 +1,55 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Inventario de Prendas</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">Inventario de Prendas</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="light" (click)="irAHome()">
+        <ion-icon slot="icon-only" name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-button (click)="ordenar()">Ordenar por Año</ion-button>
-  <ion-input placeholder="Buscar por diseñador" [(ngModel)]="disenador"></ion-input>
-  <ion-button (click)="buscar()">Buscar</ion-button>
-  <ion-list>
-    <ion-item *ngFor="let prenda of inventario">
-      <ion-label>
-        <h2>{{ prenda.nombre }}</h2>
-        <p>{{ prenda.disenador }} - {{ prenda.anioColeccion }} - ${{ prenda.precio }}</p>
-      </ion-label>
-    </ion-item>
-  </ion-list>
+<ion-content class="ion-padding">
+  
+  <!-- Botón de ordenamiento -->
+  <ion-button expand="full" color="tertiary" (click)="ordenar()">
+    Ordenar por Año de Colección
+  </ion-button>
+
+  <!-- Búsqueda de prendas -->
+  <ion-item>
+    <ion-input placeholder="Buscar por diseñador" [(ngModel)]="disenador" clearInput></ion-input>
+    <ion-button fill="outline" color="secondary" (click)="buscar()">Buscar</ion-button>
+  </ion-item>
+
+  <!-- Lista de prendas en tarjetas -->
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="6" *ngFor="let prenda of inventario">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{ prenda.nombre }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p><strong>Diseñador:</strong> {{ prenda.disenador }}</p>
+            <p><strong>Año de Colección:</strong> {{ prenda.anioColeccion }}</p>
+            <p><strong>Precio:</strong> ${{ prenda.precio }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Valor total del inventario -->
   <ion-footer>
+    <ion-toolbar color="dark">
+      <ion-title class="ion-text-center">Valor total del inventario: ${{ valorTotal }}</ion-title>
+    </ion-toolbar>
     <ion-toolbar>
-      <ion-title>Valor total: ${{ valorTotal }}</ion-title>
+      <ion-button expand="full" color="secondary" (click)="irAHome()">
+        <ion-icon name="home" slot="start"></ion-icon> Ir a Home
+      </ion-button>
     </ion-toolbar>
   </ion-footer>
+
 </ion-content>
