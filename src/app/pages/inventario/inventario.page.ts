@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 import { InventarioService } from 'src/app/services/inventario.service';
 import { Prenda } from 'src/app/models/prenda';
 
@@ -8,13 +9,14 @@ import { Prenda } from 'src/app/models/prenda';
   templateUrl: './inventario.page.html',
   styleUrls: ['./inventario.page.scss'],
   standalone: false,
+
 })
 export class InventarioPage {
   inventario: Prenda[] = [];
   valorTotal: number = 0;
   disenador: string = '';
 
-  constructor(private inventarioService: InventarioService, private navCtrl: NavController) {}
+  constructor(private inventarioService: InventarioService, private navCtrl: NavController, private router: Router) {}
 
   ngOnInit() {
     this.inventario = this.inventarioService.getInventario();
@@ -34,5 +36,12 @@ export class InventarioPage {
    */
   irARegistro() {
     this.navCtrl.navigateForward('/registro');
+  }
+
+  /**
+   * Redirige a la página del Menú
+   */
+  irAMenu() {
+    this.router.navigate(['/menu']);
   }
 }
