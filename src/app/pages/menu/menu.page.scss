@@ -1,0 +1,19 @@
+ion-card {
+    text-align: center;
+    background: var(--ion-color-light);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  ion-card:hover {
+    transform: scale(1.05);  /* Efecto de crecimiento al pasar el mouse */
+  }
+  
+  ion-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  ion-card-content {
+    color: var(--ion-color-medium);
+    font-size: 0.9rem;
+  }

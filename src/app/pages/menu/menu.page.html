@@ -1,18 +1,39 @@
-
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Menú</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">Menú Principal</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-button expand="full" (click)="irARegistro()">
-    <ion-icon name="person-add-outline" slot="start"></ion-icon>
-    Registro
-  </ion-button>
-  <ion-button expand="full" (click)="irAInventario()">
-    <ion-icon name="cube-outline" slot="start"></ion-icon>
-    Inventario
-  </ion-button>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-card button (click)="irARegistro()">
+          <ion-card-header>
+            <ion-card-title class="ion-text-center">
+              <ion-icon name="person-add-outline" size="large"></ion-icon>
+              <br /> Registro de Prendas
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Agrega nuevas prendas al inventario con su diseñador, precio y año de colección.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-card button (click)="irAInventario()">
+          <ion-card-header>
+            <ion-card-title class="ion-text-center">
+              <ion-icon name="cube-outline" size="large"></ion-icon>
+              <br /> Inventario
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Consulta y gestiona las prendas disponibles en la boutique.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
-`;
