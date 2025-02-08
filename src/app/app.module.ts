@@ -4,13 +4,15 @@ import { IonicModule } from '@ionic/angular';
 import { Route, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 
-// Importa el módulo de la página de registro
+
 import { RegistroPageModule } from './pages/registro/registro.module';
+
 
 const routes: Route[] = [
   { path: 'inventario', loadChildren: () => import('./pages/inventario/inventario.module').then(m => m.InventarioPageModule) },
   // Agrega la ruta de la página de registro
-  { path: 'registro', loadChildren: () => import('./pages/registro/registro.module').then(m => m.RegistroPageModule) }
+  { path: 'registro', loadChildren: () => import('./pages/registro/registro.module').then(m => m.RegistroPageModule) },
+  { path: 'menu', loadChildren: () => import('./pages/menu/menu.module').then(m => m.MenuPageModule) }
 ];
 
 @NgModule({
@@ -19,8 +21,9 @@ const routes: Route[] = [
     BrowserModule,
     IonicModule.forRoot(),
     RouterModule.forRoot(routes),
-    // Asegúrate de que el módulo de la página de registro esté importado
-    RegistroPageModule
+    
+    RegistroPageModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
