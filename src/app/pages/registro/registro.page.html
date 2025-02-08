@@ -5,35 +5,67 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Agregar Nueva Prenda</ion-card-title>
+  <ion-card class="custom-card">
+    <ion-card-header class="ion-text-center">
+      <ion-card-title>👗 Agregar Nueva Prenda</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
-      <ion-item>
-        <ion-label position="stacked">Nombre</ion-label>
-        <ion-input [(ngModel)]="nuevaPrenda.nombre" placeholder="Ej: Vestido de Gala" clearInput></ion-input>
-      </ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <ion-item>
+              <ion-label position="floating">
+                <ion-icon name="shirt-outline"></ion-icon> Nombre de la Prenda
+              </ion-label>
+              <ion-input [(ngModel)]="nuevaPrenda.nombre" placeholder=""></ion-input>
+            </ion-item>
+            <ion-text color="medium">Ingrese un nombre descriptivo, por ejemplo: Blazer de Seda.</ion-text>
+          </ion-col>
+        </ion-row>
 
-      <ion-item>
-        <ion-label position="stacked">Diseñador</ion-label>
-        <ion-input [(ngModel)]="nuevaPrenda.disenador" placeholder="Ej: Chanel" clearInput></ion-input>
-      </ion-item>
+        <ion-row>
+          <ion-col size="12">
+            <ion-item>
+              <ion-label position="floating">
+                <ion-icon name="brush-outline"></ion-icon> Diseñador
+              </ion-label>
+              <ion-input [(ngModel)]="nuevaPrenda.disenador" placeholder=""></ion-input>
+            </ion-item>
+            <ion-text color="medium">Ingrese el nombre del diseñador de la prenda.</ion-text>
+          </ion-col>
+        </ion-row>
 
-      <ion-item>
-        <ion-label position="stacked">Año de Colección</ion-label>
-        <ion-input type="number" [(ngModel)]="nuevaPrenda.anioColeccion" placeholder="Ej: 2024"></ion-input>
-      </ion-item>
+        <ion-row>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="floating">
+                <ion-icon name="calendar-outline"></ion-icon> Año de Colección
+              </ion-label>
+              <ion-input type="number" [(ngModel)]="nuevaPrenda.anioColeccion" placeholder="Ej: 2024"></ion-input>
+            </ion-item>
+            <ion-text color="medium">Año en el que la prenda fue lanzada.</ion-text>
+          </ion-col>
 
-      <ion-item>
-        <ion-label position="stacked">Precio</ion-label>
-        <ion-input type="number" [(ngModel)]="nuevaPrenda.precio" placeholder="Ej: 1500"></ion-input>
-      </ion-item>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="floating">
+                <ion-icon name="cash-outline"></ion-icon> Precio ($)
+              </ion-label>
+              <ion-input type="number" [(ngModel)]="nuevaPrenda.precio" placeholder="Ej: 1500"></ion-input>
+            </ion-item>
+            <ion-text color="medium">Ingrese el precio ($).</ion-text>
+          </ion-col>
+        </ion-row>
 
-      <ion-button expand="full" color="success" (click)="registrarPrenda()">
-        <ion-icon name="add-circle" slot="start"></ion-icon> Registrar Prenda
-      </ion-button>
+        <ion-row class="ion-text-center">
+          <ion-col size="12">
+            <ion-button expand="full" color="success" (click)="registrarPrenda()" class="custom-button">
+              <ion-icon name="add-circle" slot="start"></ion-icon> Registrar Prenda
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-card-content>
   </ion-card>
 </ion-content>

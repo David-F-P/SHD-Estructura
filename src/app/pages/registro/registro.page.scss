@@ -1,0 +1,21 @@
+.custom-card {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  ion-item {
+    --border-radius: 8px;
+    --background: #070707;
+    margin-bottom: 10px;
+  }
+  
+  ion-input {
+    font-size: 16px;
+  }
+  
+  .custom-button {
+    font-size: 16px;
+    font-weight: bold;
+    --border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 128, 0, 0.2);
+  }
